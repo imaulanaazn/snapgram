@@ -1,13 +1,13 @@
 <script setup lang="ts">
-    import { ref, onMounted } from 'vue';
-    import router from '@/router';
-    const isAuthenticated = ref(false)
+import router from '@/router';
+import { useAuthContext } from '@/context';
+
+    const {isAuthenticated} = useAuthContext()
+    console.log(isAuthenticated)
     
-    onMounted(()=>{
-        if(isAuthenticated.value){
-            router.push('/')
-        }
-    })
+    if(isAuthenticated){
+        router.push('/')
+    }
 </script>
 
 <template v-if="!isAuthenticated">

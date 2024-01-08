@@ -15,6 +15,7 @@ import { Input } from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
 import { useCreateUserAccount, useSignInAccount } from '@/lib/vue-query/queries';
 import { useAuthContext } from '@/context/index';
+import { INewUser } from '@/types';
 
 const { toast } = useToast()
 const authContext = useAuthContext();
@@ -36,7 +37,7 @@ const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCrea
 const { mutateAsync: signInAccount, isPending: isSigningInUser } = useSignInAccount();
 
 // Handler
-const handleSignup = async (user: any) => {
+const handleSignup = async (user: INewUser) => {
     try {
       const newUser = await createUserAccount(user);
 
@@ -95,7 +96,7 @@ const onSubmit = form.handleSubmit((values) => {
         <form @submit.prevent="onSubmit" class="flex flex-col gap-5 w-full mt-4">
             <FormField v-slot="{ componentField }" name="name">
                 <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel className="shad-form_label">Name</FormLabel>
                         <FormControl>
                             <Input type="text" class="shad-input" v-bind="componentField" />
                         </FormControl>
@@ -105,7 +106,7 @@ const onSubmit = form.handleSubmit((values) => {
 
             <FormField v-slot="{ componentField }" name="username">
                 <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel className="shad-form_label">Username</FormLabel>
                         <FormControl>
                             <Input type="text" class="shad-input" v-bind="componentField" />
                         </FormControl>
@@ -115,7 +116,7 @@ const onSubmit = form.handleSubmit((values) => {
 
             <FormField v-slot="{ componentField }" name="email">
                 <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="shad-form_label">Email</FormLabel>
                         <FormControl>
                             <Input type="email" class="shad-input" v-bind="componentField" />
                         </FormControl>
@@ -125,7 +126,7 @@ const onSubmit = form.handleSubmit((values) => {
 
             <FormField v-slot="{ componentField }" name="password">
                 <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel className="shad-form_label">Password</FormLabel>
                         <FormControl>
                             <Input type="password" class="shad-input" v-bind="componentField" />
                         </FormControl>

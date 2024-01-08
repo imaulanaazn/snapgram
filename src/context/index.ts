@@ -62,7 +62,7 @@ export function provideAuthContext() {
     try {
       const currentAccount = await getCurrentUser();
       if (currentAccount) {
-        Object.assign(user, { ...currentAccount });
+        Object.assign(user.value, { ...currentAccount }); // Update user.value, not user
         isAuthenticated.value = true;
         return true;
       }
@@ -74,6 +74,7 @@ export function provideAuthContext() {
       isLoading.value = false;
     }
   };
+  
 
   onMounted(() => {
     const cookieFallback = localStorage.getItem('cookieFallback');
