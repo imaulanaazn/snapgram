@@ -7,7 +7,6 @@ import { Button } from '../ui/button';
 
   const { user } = useAuthContext();
   const { mutate: signOut, isSuccess } = useSignOutAccount();
-
   watch(isSuccess, ()=>{
       if (isSuccess) router.go(0);
   })

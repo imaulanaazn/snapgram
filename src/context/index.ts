@@ -62,7 +62,14 @@ export function provideAuthContext() {
     try {
       const currentAccount = await getCurrentUser();
       if (currentAccount) {
-        Object.assign(user.value, { ...currentAccount }); // Update user.value, not user
+        Object.assign(user.value, { 
+          id: currentAccount.$id,
+          name: currentAccount.name,
+          username: currentAccount.username,
+          email: currentAccount.email,
+          imageUrl: currentAccount.imageUrl,
+          bio: currentAccount.bio,
+         }); // Update user.value, not user
         isAuthenticated.value = true;
         return true;
       }
