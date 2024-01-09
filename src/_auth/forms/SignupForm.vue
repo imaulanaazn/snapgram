@@ -15,7 +15,13 @@ import { Input } from '@/components/ui/input'
 import {Button} from '@/components/ui/button'
 import { useCreateUserAccount, useSignInAccount } from '@/lib/vue-query/queries';
 import { useAuthContext } from '@/context/index';
-import { INewUser } from '@/types';
+
+type HandleSignupProps = {
+    email: string;
+    password: string;
+    name: string;
+    username: string;
+}
 
 const { toast } = useToast()
 const authContext = useAuthContext();
@@ -37,7 +43,7 @@ const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCrea
 const { mutateAsync: signInAccount, isPending: isSigningInUser } = useSignInAccount();
 
 // Handler
-const handleSignup = async (user: INewUser) => {
+const handleSignup = async (user: HandleSignupProps) => {
     try {
       const newUser = await createUserAccount(user);
 

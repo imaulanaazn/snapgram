@@ -16,6 +16,11 @@ import Loader from '@/components/shared/Loader.vue'
 import router from '@/router'
 import { useAuthContext } from '@/context'
 
+type HandleSigninProps = {
+    email: string;
+    password: string;
+}
+
 const {toast} = useToast()
 const {checkAuthUser, isLoading:isUserLoading} = useAuthContext();
 
@@ -30,7 +35,7 @@ const form = useForm({
   }
 })
 
-const handleSignin = async (user: {email:string, password: string}) => {
+const handleSignin = async (user: HandleSigninProps) => {
   const session = await signInAccount(user);
 
   if (!session) {

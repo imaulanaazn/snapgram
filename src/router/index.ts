@@ -5,6 +5,7 @@ import SignupForm from "../_auth/forms/SignupForm.vue";
 import RootLayout from "../_root/RootLayout.vue";
 import AuthLayout from "../_auth/AuthLayout.vue";
 import Home from "../_root/pages/Home.vue";
+import CreatePost from "@/_root/pages/CreatePost.vue";
 
 const routes = [
     {
@@ -16,7 +17,7 @@ const routes = [
         //   { path: '/explore', component: Explore },
         //   { path: '/saved', component: Saved },
         //   { path: '/all-users', component: AllUsers },
-        //   { path: '/create-post', component: CreatePost },
+          { path: '/create-post', component: CreatePost },
         //   { path: '/update-post/:id', component: EditPost },
         //   { path: '/posts/:id', component: PostDetails },
         //   { path: '/profile/:id', component: Profile },
