@@ -6,6 +6,7 @@ import RootLayout from "../_root/RootLayout.vue";
 import AuthLayout from "../_auth/AuthLayout.vue";
 import Home from "../_root/pages/Home.vue";
 import CreatePost from "@/_root/pages/CreatePost.vue";
+import EditPost from "@/_root/pages/EditPost.vue";
 
 const routes = [
     {
@@ -18,7 +19,7 @@ const routes = [
         //   { path: '/saved', component: Saved },
         //   { path: '/all-users', component: AllUsers },
           { path: '/create-post', component: CreatePost },
-        //   { path: '/update-post/:id', component: EditPost },
+          { path: '/update-post/:id', component: EditPost },
         //   { path: '/posts/:id', component: PostDetails },
         //   { path: '/profile/:id', component: Profile },
         //   { path: '/update-profile/:id', component: UpdateProfile }
