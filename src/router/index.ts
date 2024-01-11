@@ -7,6 +7,7 @@ import AuthLayout from "../_auth/AuthLayout.vue";
 import Home from "../_root/pages/Home.vue";
 import CreatePost from "@/_root/pages/CreatePost.vue";
 import EditPost from "@/_root/pages/EditPost.vue";
+import PostDetails from "@/_root/pages/PostDetails.vue";
 
 const routes = [
     {
@@ -20,7 +21,9 @@ const routes = [
         //   { path: '/all-users', component: AllUsers },
           { path: '/create-post', component: CreatePost },
           { path: '/update-post/:id', component: EditPost },
-        //   { path: '/posts/:id', component: PostDetails },
+          { path: '/posts/:id', component: PostDetails, meta: {
+            watchParam: 'id' //
+          } },
         //   { path: '/profile/:id', component: Profile },
         //   { path: '/update-profile/:id', component: UpdateProfile }
         ]

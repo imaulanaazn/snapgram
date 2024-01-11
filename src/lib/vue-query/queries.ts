@@ -27,6 +27,7 @@ import {
   deleteSavedPost,
 } from "@/lib/appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { ComputedRef } from "vue";
 
 // ============================================================
 // AUTH QUERIES
@@ -108,10 +109,10 @@ export const useGetPostById = (postId?: string) => {
   });
 };
 
-export const useGetUserPosts = (userId?: string) => {
+export const useGetUserPosts = (userId: ComputedRef<string | undefined>) => {
   return useQuery({
     queryKey: [QUERY_KEYS.GET_USER_POSTS, userId],
-    queryFn: () => getUserPosts(userId),
+    queryFn: () => getUserPosts(userId.value),
     enabled: !!userId,
   });
 };

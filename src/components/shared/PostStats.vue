@@ -39,7 +39,6 @@ onMounted(() => {
 });
 
 watch(currentUser, () => {
-  console.log( currentUser.value?.save)
   savedPostRecord.value = currentUser.value?.save.find(
     (record: Models.Document) => record.post.$id === post.$id
   );

@@ -10,7 +10,7 @@ import Bottombar from '@/components/shared/Bottombar.vue';
       <LeftSidebar />
 
       <section className="flex flex-1 h-full">
-        <router-view></router-view>
+        <router-view :key="$route.params[$route.meta.watchParam]"></router-view>
       </section>
 
       <Bottombar/>
