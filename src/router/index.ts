@@ -10,6 +10,7 @@ import EditPost from "@/_root/pages/EditPost.vue";
 import PostDetails from "@/_root/pages/PostDetails.vue";
 import Explore from "@/_root/pages/Explore.vue";
 import Saved from "@/_root/pages/Saved.vue";
+import AllUsers from "@/_root/pages/AllUsers.vue";
 
 const routes = [
     {
@@ -20,7 +21,7 @@ const routes = [
           { path: '', component: Home },
           { path: '/explore', component: Explore },
           { path: '/saved', component: Saved },
-        //   { path: '/all-users', component: AllUsers },
+          { path: '/all-users', component: AllUsers },
           { path: '/create-post', component: CreatePost },
           { path: '/update-post/:id', component: EditPost },
           { path: '/posts/:id', component: PostDetails, meta: {
