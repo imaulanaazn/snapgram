@@ -74,10 +74,10 @@ export const useGetPosts = () => {
   });
 };
 
-export const useSearchPosts = (searchTerm: string) => {
+export const useSearchPosts = (searchTerm: ComputedRef<string>) => {
   return useQuery({
     queryKey: [QUERY_KEYS.SEARCH_POSTS, searchTerm],
-    queryFn: () => searchPosts(searchTerm),
+    queryFn: () => searchPosts(searchTerm.value),
     enabled: !!searchTerm,
   });
 };

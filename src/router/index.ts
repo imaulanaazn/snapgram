@@ -8,6 +8,7 @@ import Home from "../_root/pages/Home.vue";
 import CreatePost from "@/_root/pages/CreatePost.vue";
 import EditPost from "@/_root/pages/EditPost.vue";
 import PostDetails from "@/_root/pages/PostDetails.vue";
+import Explore from "@/_root/pages/Explore.vue";
 
 const routes = [
     {
@@ -16,7 +17,7 @@ const routes = [
         component: RootLayout,
         children: [
           { path: '', component: Home },
-        //   { path: '/explore', component: Explore },
+          { path: '/explore', component: Explore },
         //   { path: '/saved', component: Saved },
         //   { path: '/all-users', component: AllUsers },
           { path: '/create-post', component: CreatePost },
