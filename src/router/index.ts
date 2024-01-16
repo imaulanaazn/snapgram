@@ -14,6 +14,7 @@ import AllUsers from "@/_root/pages/AllUsers.vue";
 import GridPostList from "@/components/shared/GridPostList.vue";
 import Profile from "@/_root/pages/Profile.vue";
 import LikedPosts from "@/components/shared/LikedPosts.vue";
+import UpdateProfile from "@/_root/pages/UpdateProfile.vue";
 
 const routes = [
     {
@@ -39,8 +40,8 @@ const routes = [
                 component: LikedPosts
               }
             ]
-          }
-        //   { path: '/update-profile/:id', component: UpdateProfile }
+          },
+          { path: '/update-profile/:id', component: UpdateProfile }
         ]
       },
       {
