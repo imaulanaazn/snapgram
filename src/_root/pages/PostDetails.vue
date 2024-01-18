@@ -12,11 +12,11 @@ import { watch,computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 const route = useRoute()
 
-const { id } = route.params;
 const { user } = useAuthContext();
 const relatedPosts = ref<Models.Document[] | undefined>([])
+const postId = computed(()=>route.params.id)
 
-const { data: post, isLoading } = useGetPostById(id.toString());
+const { data: post, isLoading } = useGetPostById(postId);
 const creatorPostId = computed(()=>post.value?.creator.$id)
 
 const { data: userPosts, isLoading: isUserPostLoading } = useGetUserPosts(creatorPostId);
@@ -24,13 +24,14 @@ const { data: userPosts, isLoading: isUserPostLoading } = useGetUserPosts(creato
 const { mutate: deletePost } = useDeletePost();
 
 const handleDeletePost = () => {
-    deletePost({ postId: id.toString(), imageId: post.value?.imageId });
+    deletePost({ postId: postId.value.toString(), imageId: post.value?.imageId });
     router.go(-1);
 };
 
 watch(userPosts, ()=>{
+  console.log(postId.value)
   relatedPosts.value = userPosts.value?.documents.filter(
-    (userPost:Models.Document) => userPost.$id !== id
+    (userPost:Models.Document) => userPost.$id !== postId.value
   );
 })
 </script>

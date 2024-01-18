@@ -22,15 +22,6 @@ export const INITIAL_USER: IUser = {
   bio: '',
 };
 
-const initialContext = {
-  user: INITIAL_USER,
-  isLoading: false,
-  isAuthenticated: false,
-  setUser: () => {},
-  setIsAuthenticated: () => {},
-  checkAuthUser: async () => false,
-};
-
 export const AuthContextSymbol = Symbol();
 
 interface IAuthContext {

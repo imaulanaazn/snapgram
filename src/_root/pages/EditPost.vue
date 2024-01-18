@@ -3,11 +3,12 @@ import { useGetPostById } from '@/lib/vue-query/queries';
 import { useRoute } from 'vue-router';
 import PostForm from '@/components/forms/PostForm.vue';
 import Loader from '@/components/shared/Loader.vue';
+import { computed } from 'vue';
 
 const route = useRoute()
 
-const {id} = route.params
-const { data: post, isLoading } = useGetPostById(id.toString());
+const id = computed(()=>route.params.id)
+const { data: post, isLoading } = useGetPostById(id);
 </script>
 
 <template>

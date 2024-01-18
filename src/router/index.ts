@@ -11,7 +11,6 @@ import PostDetails from "@/_root/pages/PostDetails.vue";
 import Explore from "@/_root/pages/Explore.vue";
 import Saved from "@/_root/pages/Saved.vue";
 import AllUsers from "@/_root/pages/AllUsers.vue";
-import GridPostList from "@/components/shared/GridPostList.vue";
 import Profile from "@/_root/pages/Profile.vue";
 import LikedPosts from "@/components/shared/LikedPosts.vue";
 import UpdateProfile from "@/_root/pages/UpdateProfile.vue";
